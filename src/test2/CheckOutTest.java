@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class CheckOutTest {
 	
-	@Test
+	@Test(groups= {"sanity"})
 	
 	public void test4() {
 		

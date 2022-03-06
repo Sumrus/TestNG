@@ -2,11 +2,19 @@ package test;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class AnnotationExample {
+	
+	@BeforeGroups("sanity")
+	
+	public void BeforeG() {
+		System.out.println("Inside Before Group");
+		
+	}
 	
     @BeforeTest
 	
@@ -14,12 +22,12 @@ public class AnnotationExample {
 		System.out.println("Inside Before Test");
 	}
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public void BeforeM() {
 		System.out.println("Inside Before Method");
 	}
 	
-	@Test
+	@Test(groups= {"sanity"})
 	
 	public void test1(){
 		
